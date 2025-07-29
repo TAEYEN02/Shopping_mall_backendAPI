@@ -26,13 +26,13 @@ public class JwtTokenProvider {
 	private final long jwtExpiration;
 	
 	public JwtTokenProvider(@Value("${jwt.secret}") String secret,
-							@Value("${jwt.expiration") long jwtExpiration) {
+							@Value("${jwt.expiration}") long jwtExpiration) {
 		this.key = Keys.hmacShaKeyFor(secret.getBytes());
 		this.jwtExpiration=jwtExpiration;
 	}
 	
 	//JWT 토큰 
-	private String generateToken(Authentication authentication) {
+	public String generateToken(Authentication authentication) {
 		UserDetails userPrincipal = (UserDetails) authentication.getPrincipal();
 		Date expriyDate = new Date(System.currentTimeMillis()+jwtExpiration);
 		
@@ -72,11 +72,4 @@ public class JwtTokenProvider {
 		}
 		return false;
 	}
-	
-	
-	
-	
-	
-	
-	
 }
