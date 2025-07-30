@@ -66,6 +66,9 @@ public class User implements UserDetails {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Cart cart;
     
+    @Column
+    private String address;
+    
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

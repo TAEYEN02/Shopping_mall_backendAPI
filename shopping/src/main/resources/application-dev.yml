@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop  # 개발 시에만 사용, 운영에서는 validate로 변경
+      ddl-auto: update  # 개발 시에만 create-drop사용, 운영에서는 validate로 변경
     show-sql: true
     properties:
       hibernate:
@@ -27,7 +27,7 @@ logging:
 
 # JWT 설정
 jwt:
-  secret: mySecretKey1234567890abcdefghijklmnopqrstuvwxyz  # 실제로는 환경변수로 관리
+  secret: Gd7#Lm@9$wKpZx!84MqRvT2nChEYBu1vXN5eF@zJL%UwDqRgHK!3Sn6tPjXxLa0Z  # 실제로는 환경변수로 관리
   expiration: 86400000  # 24시간 (밀리초)
 
 # Swagger 설정

@@ -65,7 +65,7 @@ public class AuthController {
     public ResponseEntity<ApiResponse<UserInfoResponse>> getCurrentUser() {
         try {
             User user = authService.getCurrentUser();
-            UserInfoResponse response = UserInfoResponse.builder()
+			UserInfoResponse response = UserInfoResponse.builder()
                     .id(user.getId())
                     .email(user.getEmail())
                     .name(user.getName())

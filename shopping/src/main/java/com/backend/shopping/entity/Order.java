@@ -57,4 +57,16 @@ public class Order {
     protected void onCreate() {
         orderDate = LocalDateTime.now();
     }
+    
+    @Column(name = "order_number", unique = true)
+    private String orderNumber;
+
+    @Column(name = "shipping_address")
+    private String shippingAddress;
+
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 }
