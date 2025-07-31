@@ -12,7 +12,7 @@ Swagger를 활용한 문서 자동화와 테스트 환경도 구축되어 있어
 | 개발 기간 | 2025.07.28 ~  |
 | 기술 스택 | Spring Boot, JPA, MySQL, Spring Security, JWT, Swagger |
 | API 문서 | Swagger UI (OpenAPI 3.0) |
-| 테스트 | JUnit5, Mockito |
+| 테스트 | postman |
 
 ---
 
@@ -22,7 +22,7 @@ Swagger를 활용한 문서 자동화와 테스트 환경도 구축되어 있어
 - **Authentication**: JWT
 - **Database**: MySQL 8.0
 - **Documentation**: Swagger (OpenAPI 3.0)
-- **Testing**: JUnit5, Mockito
+- **Testing**: postman
 - **Build Tool**: Gradle
 
 ---
