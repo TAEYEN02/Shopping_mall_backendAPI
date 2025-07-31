@@ -120,8 +120,8 @@ shopping-mall-api/
 
 ## 📦 Swagger API 문서
 
-- **Swagger UI**: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)  
-- **OpenAPI JSON**: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+- **OpenAPI JSON**: [openapi.json](https://github.com/user-attachments/files/21520006/openapi.json)
+
 
 ### ✅ Swagger 설정 예시 (`SwaggerConfig.java`)
 ```java
