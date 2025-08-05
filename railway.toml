@@ -1,6 +1,5 @@
 [build]
-builder = "paketobuildpacks/builder:base"
-buildCommand = "cd shopping && ./gradlew build -x test"
+buildCommand = "cd shopping && gradlew.bat build"
 
 [deploy]
 startCommand = "java -jar shopping/build/libs/shopping-0.0.1-SNAPSHOT.jar"
