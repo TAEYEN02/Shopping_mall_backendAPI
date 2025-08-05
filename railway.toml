@@ -1,8 +1,9 @@
 [build]
-  buildCommand = "cd shopping && ./gradlew build"
+builder = "paketobuildpacks/builder:base"
+buildCommand = "cd shopping && ./gradlew build -x test"
 
 [deploy]
-  startCommand = "java -jar shopping/build/libs/shopping-0.0.1-SNAPSHOT.jar"
+startCommand = "java -jar shopping/build/libs/shopping-0.0.1-SNAPSHOT.jar"
 
 [project]
 id = "ddf3b687-9d82-4ac5-843f-264d9c2f98f6"
