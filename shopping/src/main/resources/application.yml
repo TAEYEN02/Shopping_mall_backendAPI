@@ -1,46 +1,41 @@
 spring:
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE:dev}  # Railway에서 환경변수로 설정
+    active: ${SPRING_PROFILES_ACTIVE:default}  # 기본 프로필(default) 사용 (dev, prod 등 프로필 미설정 시)
   application:
     name: shopping-mall-api
-  
+
   datasource:
-    # Railway PostgreSQL 사용하거나 H2 메모리 DB 사용
-    url: ${DATABASE_URL:jdbc:h2:mem:testdb}
-    username: ${DB_USERNAME:sa}
-    password: ${DB_PASSWORD:}
-    driver-class-name: ${DB_DRIVER:org.h2.Driver}
-  
+    url: ${DATABASE_URL:jdbc:h2:mem:testdb}        # 기본은 H2 인메모리 DB
+    username: ${DB_USERNAME:sa}                    # 기본 sa
+    password: ${DB_PASSWORD:}                       # 기본 비밀번호 없음
+    driver-class-name: ${DB_DRIVER:org.h2.Driver}  # H2 드라이버
+
   jpa:
     hibernate:
-      ddl-auto: ${DDL_AUTO:create-drop}  # Railway에서는 create-drop이 안전
+      ddl-auto: ${DDL_AUTO:create-drop}            # 배포시 create-drop 권장 (테이블 자동생성/삭제)
     show-sql: ${SHOW_SQL:false}
     properties:
       hibernate:
-        # H2용 dialect (PostgreSQL 사용시 PostgreSQLDialect로 변경)
-        dialect: ${DB_DIALECT:org.hibernate.dialect.H2Dialect}
+        dialect: ${DB_DIALECT:org.hibernate.dialect.H2Dialect}  # H2 Dialect
         format_sql: true
     defer-datasource-initialization: true
-  
-  # H2 콘솔 설정 (개발시만)
+
+  # H2 콘솔 (개발 중에만 true 권장, 배포 시 false)
   h2:
     console:
-      enabled: ${H2_CONSOLE:false}  # 배포시에는 보안상 false
-  
+      enabled: ${H2_CONSOLE:false}
+
   sql:
     init:
       mode: ${SQL_INIT_MODE:always}
 
-# 서버 설정 - Railway용 포트 설정 (중요!)
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8080}  # Railway가 할당해주는 포트 사용
 
-# JWT 설정
 jwt:
   secret: ${JWT_SECRET:Gd7#Lm@9$wKpZx!84MqRvT2nChEYBu1vXN5eF@zJL%UwDqRgHK!3Sn6tPjXxLa0Z}
   expiration: ${JWT_EXPIRATION:86400000}
 
-# Swagger 설정
 springdoc:
   api-docs:
     path: /v3/api-docs
@@ -48,7 +43,6 @@ springdoc:
     path: /swagger-ui.html
     operations-sorter: method
 
-# 로깅 설정
 logging:
   level:
     root: ${LOG_LEVEL:INFO}
