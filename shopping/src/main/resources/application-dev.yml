@@ -1,42 +1,24 @@
 spring:
+  config:
+    activate:
+      on-profile: dev
+  
   datasource:
     url: jdbc:mysql://localhost:3306/shopping_mall?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Seoul
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
-
+  
   jpa:
     hibernate:
-      ddl-auto: update  # 개발 시에만 create-drop사용, 운영에서는 validate로 변경
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-        format_sql: true
-    defer-datasource-initialization: true
-
-  sql:
-    init:
-      mode: always  # 초기 데이터 로드
 
 logging:
   level:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     com.example.shoppingmall: DEBUG
-
-# JWT 설정
-jwt:
-  secret: Gd7#Lm@9$wKpZx!84MqRvT2nChEYBu1vXN5eF@zJL%UwDqRgHK!3Sn6tPjXxLa0Z  # 실제로는 환경변수로 관리
-  expiration: 86400000  # 24시간 (밀리초)
-
-# Swagger 설정
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-    operations-sorter: method
-
-server:
-  port: 8080

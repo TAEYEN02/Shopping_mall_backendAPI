@@ -1,5 +1,57 @@
 spring:
   profiles:
-    active: dev
+    active: ${SPRING_PROFILES_ACTIVE:dev}  # Railway에서 환경변수로 설정
   application:
     name: shopping-mall-api
+  
+  datasource:
+    # Railway PostgreSQL 사용하거나 H2 메모리 DB 사용
+    url: ${DATABASE_URL:jdbc:h2:mem:testdb}
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:}
+    driver-class-name: ${DB_DRIVER:org.h2.Driver}
+  
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:create-drop}  # Railway에서는 create-drop이 안전
+    show-sql: ${SHOW_SQL:false}
+    properties:
+      hibernate:
+        # H2용 dialect (PostgreSQL 사용시 PostgreSQLDialect로 변경)
+        dialect: ${DB_DIALECT:org.hibernate.dialect.H2Dialect}
+        format_sql: true
+    defer-datasource-initialization: true
+  
+  # H2 콘솔 설정 (개발시만)
+  h2:
+    console:
+      enabled: ${H2_CONSOLE:false}  # 배포시에는 보안상 false
+  
+  sql:
+    init:
+      mode: ${SQL_INIT_MODE:always}
+
+# 서버 설정 - Railway용 포트 설정 (중요!)
+server:
+  port: ${PORT:8080}
+
+# JWT 설정
+jwt:
+  secret: ${JWT_SECRET:Gd7#Lm@9$wKpZx!84MqRvT2nChEYBu1vXN5eF@zJL%UwDqRgHK!3Sn6tPjXxLa0Z}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+# Swagger 설정
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+
+# 로깅 설정
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}
+    org.hibernate.SQL: ${SQL_LOG_LEVEL:DEBUG}
+    org.hibernate.type.descriptor.sql.BasicBinder: ${BINDER_LOG_LEVEL:TRACE}
+    com.example.shoppingmall: ${APP_LOG_LEVEL:DEBUG}
