@@ -51,7 +51,7 @@ public class User implements UserDetails {
     private String phone;
     
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Builder.Default
     private Role role = Role.USER;
     
     @Column(name = "created_at")
@@ -61,6 +61,7 @@ public class User implements UserDetails {
     private LocalDateTime updatedAt;
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @Builder.Default
     private List<Order> orders = new ArrayList<>();
     
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
