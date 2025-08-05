@@ -17,13 +17,10 @@ jobs:
         curl -sSL https://railway.app/install.sh | sh
         echo "$HOME/.railway/bin" >> $GITHUB_PATH
 
-    - name: Login to Railway
-      env:
-        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-      run: railway login --apiToken $RAILWAY_TOKEN
-
     - name: Link Railway Project
-      run: railway link --project ddf3b687-9d82-4ac5-843f-264d9c2f98f6  # 여기에 실제 프로젝트 ID 넣기
+      run: railway link --project ddf3b687-9d82-4ac5-843f-264d9c2f98f6
 
     - name: Deploy to Railway
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: railway up --service shoppingmallbackendapi-production
