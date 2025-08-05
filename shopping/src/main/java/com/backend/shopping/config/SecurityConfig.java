@@ -62,12 +62,12 @@ public class SecurityConfig {
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
                 .requestMatchers(
-                	    "/swagger-ui.html", 
-                	    "/swagger-ui/**", 
-                	    "/api-docs", 
-                	    "/api-docs/**", 
-                	    "/v3/api-docs",   
-                	    "/v3/api-docs/**"
+                	    "/swagger-ui.html",         // 일부 UI에서 이걸 요청
+                	    "/swagger-ui/**",           // swagger-ui static 리소스
+                	    "/v3/api-docs/**",          // OpenAPI 문서
+                	    "/v3/api-docs",             // OpenAPI 문서 루트
+                	    "/swagger-resources/**",   // 경우에 따라 필요
+                	    "/webjars/**"              // 경우에 따라 필요
                 	).permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
                 
