@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.backend.shopping.controller.ProductControllerTest" tests="7" skipped="7" failures="0" errors="0" timestamp="2025-08-20T07:45:02.275Z" hostname="DESKTOP-TC3SV48" time="0.002">
+  <properties/>
+  <testcase name="상품 생성 - 일반 사용자 권한 (접근 거부)" classname="com.backend.shopping.controller.ProductControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="유효하지 않은 상품 데이터로 생성 시 실패" classname="com.backend.shopping.controller.ProductControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="상품 단건 조회" classname="com.backend.shopping.controller.ProductControllerTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="인기 상품 조회" classname="com.backend.shopping.controller.ProductControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="카테고리 목록 조회" classname="com.backend.shopping.controller.ProductControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="상품 목록 조회" classname="com.backend.shopping.controller.ProductControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="상품 생성 - 관리자 권한" classname="com.backend.shopping.controller.ProductControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

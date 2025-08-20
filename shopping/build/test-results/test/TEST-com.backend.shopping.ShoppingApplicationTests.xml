@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.backend.shopping.ShoppingApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-08-20T07:45:02.014Z" hostname="DESKTOP-TC3SV48" time="0.254">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.backend.shopping.ShoppingApplicationTests" time="0.254"/>
+  <system-out><![CDATA[16:44:56.614 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.backend.shopping.ShoppingApplicationTests]: ShoppingApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:44:56.690 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.backend.shopping.ShoppingApplication for test class com.backend.shopping.ShoppingApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-20T16:44:57.012+09:00  INFO 6488 --- [shopping] [    Test worker] c.b.shopping.ShoppingApplicationTests    : Starting ShoppingApplicationTests using Java 17.0.15 with PID 6488 (started by admin in C:\Users\admin\Desktop\Shopping_mall_backendAPI\shopping)
+2025-08-20T16:44:57.013+09:00  INFO 6488 --- [shopping] [    Test worker] c.b.shopping.ShoppingApplicationTests    : The following 1 profile is active: "default"
+2025-08-20T16:44:57.641+09:00  INFO 6488 --- [shopping] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20T16:44:57.699+09:00  INFO 6488 --- [shopping] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2025-08-20T16:44:58.164+09:00  INFO 6488 --- [shopping] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-20T16:44:58.266+09:00  INFO 6488 --- [shopping] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-20T16:44:58.329+09:00  INFO 6488 --- [shopping] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-20T16:44:58.624+09:00  INFO 6488 --- [shopping] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-20T16:44:58.642+09:00  INFO 6488 --- [shopping] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-20T16:44:58.753+09:00  INFO 6488 --- [shopping] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-08-20T16:44:58.755+09:00  INFO 6488 --- [shopping] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-20T16:44:58.769+09:00  WARN 6488 --- [shopping] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-20T16:44:58.786+09:00  INFO 6488 --- [shopping] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-20T16:44:59.448+09:00  INFO 6488 --- [shopping] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-20T16:44:59.458+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists cart_items cascade 
+2025-08-20T16:44:59.460+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists carts cascade 
+2025-08-20T16:44:59.461+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists order_items cascade 
+2025-08-20T16:44:59.461+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists orders cascade 
+2025-08-20T16:44:59.461+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists products cascade 
+2025-08-20T16:44:59.461+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists users cascade 
+2025-08-20T16:44:59.464+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    create table cart_items (
+        quantity integer not null,
+        cart_id bigint not null,
+        created_at timestamp(6),
+        id bigint generated by default as identity,
+        product_id bigint not null,
+        primary key (id)
+    )
+2025-08-20T16:44:59.469+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    create table carts (
+        created_at timestamp(6),
+        id bigint generated by default as identity,
+        user_id bigint not null unique,
+        primary key (id)
+    )
+2025-08-20T16:44:59.473+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    create table order_items (
+        price numeric(10,2) not null,
+        quantity integer not null,
+        id bigint generated by default as identity,
+        order_id bigint not null,
+        product_id bigint not null,
+        primary key (id)
+    )
+2025-08-20T16:44:59.474+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    create table orders (
+        total_price numeric(10,2) not null,
+        id bigint generated by default as identity,
+        order_date timestamp(6),
+        updated_at timestamp(6),
+        user_id bigint not null,
+        order_number varchar(255) unique,
+        phone_number varchar(255),
+        shipping_address varchar(255),
+        status enum ('CANCELLED','CONFIRMED','DELIVERED','PENDING','SHIPPED') not null,
+        primary key (id)
+    )
+2025-08-20T16:44:59.476+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    create table products (
+        price numeric(10,2) not null,
+        stock integer not null,
+        created_at timestamp(6),
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        description varchar(1000),
+        category varchar(255),
+        image_url varchar(255),
+        name varchar(255) not null,
+        primary key (id)
+    )
+2025-08-20T16:44:59.476+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    create table users (
+        created_at timestamp(6),
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        address varchar(255),
+        email varchar(255) not null unique,
+        name varchar(255) not null,
+        password varchar(255) not null,
+        phone varchar(255),
+        role enum ('ADMIN','USER'),
+        primary key (id)
+    )
+2025-08-20T16:44:59.478+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists cart_items 
+       add constraint FKpcttvuq4mxppo8sxggjtn5i2c 
+       foreign key (cart_id) 
+       references carts
+2025-08-20T16:44:59.486+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists cart_items 
+       add constraint FK1re40cjegsfvw58xrkdp6bac6 
+       foreign key (product_id) 
+       references products
+2025-08-20T16:44:59.487+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists carts 
+       add constraint FKb5o626f86h46m4s7ms6ginnop 
+       foreign key (user_id) 
+       references users
+2025-08-20T16:44:59.487+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists order_items 
+       add constraint FKbioxgbv59vetrxe0ejfubep1w 
+       foreign key (order_id) 
+       references orders
+2025-08-20T16:44:59.488+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists order_items 
+       add constraint FKocimc7dtr037rh4ls4l95nlfi 
+       foreign key (product_id) 
+       references products
+2025-08-20T16:44:59.489+09:00 DEBUG 6488 --- [shopping] [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists orders 
+       add constraint FK32ql8ubntj5uh44ph9659tiih 
+       foreign key (user_id) 
+       references users
+2025-08-20T16:44:59.492+09:00  INFO 6488 --- [shopping] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-20T16:45:00.107+09:00  INFO 6488 --- [shopping] [    Test worker] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-08-20T16:45:00.108+09:00  WARN 6488 --- [shopping] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-08-20T16:45:00.203+09:00  INFO 6488 --- [shopping] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-20T16:45:00.896+09:00  WARN 6488 --- [shopping] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-20T16:45:02.002+09:00  INFO 6488 --- [shopping] [    Test worker] c.b.shopping.ShoppingApplicationTests    : Started ShoppingApplicationTests in 5.216 seconds (process running for 5.989)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

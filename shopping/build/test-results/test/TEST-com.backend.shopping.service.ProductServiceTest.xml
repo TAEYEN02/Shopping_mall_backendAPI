@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.backend.shopping.service.ProductServiceTest" tests="8" skipped="8" failures="0" errors="0" timestamp="2025-08-20T07:45:02.281Z" hostname="DESKTOP-TC3SV48" time="0.001">
+  <properties/>
+  <testcase name="재고 차감 실패 - 부족한 재고" classname="com.backend.shopping.service.ProductServiceTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="존재하지 않는 상품 조회 시 예외 발생" classname="com.backend.shopping.service.ProductServiceTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="재고 확인 - 충분한 재고" classname="com.backend.shopping.service.ProductServiceTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="재고 확인 - 부족한 재고" classname="com.backend.shopping.service.ProductServiceTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="재고 차감 성공" classname="com.backend.shopping.service.ProductServiceTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="상품 목록 조회 성공" classname="com.backend.shopping.service.ProductServiceTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="상품 조회 성공" classname="com.backend.shopping.service.ProductServiceTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="상품 생성 성공" classname="com.backend.shopping.service.ProductServiceTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

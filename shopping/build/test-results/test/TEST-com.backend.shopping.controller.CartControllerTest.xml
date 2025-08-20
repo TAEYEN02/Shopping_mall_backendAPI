@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.backend.shopping.controller.CartControllerTest" tests="9" skipped="9" failures="0" errors="0" timestamp="2025-08-20T07:45:02.272Z" hostname="DESKTOP-TC3SV48" time="0.002">
+  <properties/>
+  <testcase name="장바구니 전체 비우기" classname="com.backend.shopping.controller.CartControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="유효하지 않은 데이터로 장바구니 추가 실패" classname="com.backend.shopping.controller.CartControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="장바구니 아이템 수 조회" classname="com.backend.shopping.controller.CartControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="잘못된 수량으로 아이템 수정 실패" classname="com.backend.shopping.controller.CartControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="내 장바구니 조회" classname="com.backend.shopping.controller.CartControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="장바구니 아이템 수량 수정" classname="com.backend.shopping.controller.CartControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="인증되지 않은 사용자의 장바구니 접근 거부" classname="com.backend.shopping.controller.CartControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="장바구니 아이템 제거" classname="com.backend.shopping.controller.CartControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="장바구니에 상품 추가" classname="com.backend.shopping.controller.CartControllerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
